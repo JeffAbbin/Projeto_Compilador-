@@ -1,0 +1,5 @@
+while (x < 12)
+buffer = !buffer
+WritePort(d1, buffer)
+sleep (10)
+x = x +1
