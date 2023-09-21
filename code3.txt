@@ -1,0 +1,4 @@
+x = ReadAnalog (a2, buffer)
+if (buffer > 3000){
+	WriteSerial(s3, "pressão elevada”)
+}
