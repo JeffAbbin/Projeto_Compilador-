@@ -1,0 +1,3 @@
+if (X > 12){
+	WriteSerial(s3, 2301)
+	}
