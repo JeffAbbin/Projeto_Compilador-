@@ -1,0 +1,7 @@
+
+while (1 > 0){
+  writeport( 1 , true);
+  sleep(2);
+  writeport ( 1, false);
+  sleep(2);
+}

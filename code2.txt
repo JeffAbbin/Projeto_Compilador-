@@ -1,0 +1,16 @@
+int x;
+
+while (1 > 0){
+
+readport (1, x);
+
+  if (x == 1) { 
+    writeport (1, true);
+  }
+  if (x == 0) { 
+    writeport (1, false);
+  }
+}
+  
+
+

@@ -1,0 +1,11 @@
+int x;
+
+while (1 > 0){
+writeport (1, true);
+readport (1, x);
+
+  if (x == 1) { 
+    writeport (1, false);
+    sleep(5)
+  }
+}
