@@ -1,0 +1,109 @@
+#define __SFR_OFFSET 0x00
+#include <avr/io.h>
+.global program
+program:
+ldi   r18,0xFF          ;carrega FFh no registrador auxiliar 18
+out   DDRA,r18          ;configura portA como saída
+out   PORTC,r18         ;configura o PC com pull-up interno. inicializa PC, em low
+ldi r20, 1
+ldi r21, 0
+rjmp while0
+shorloop0:
+jmp end_loop0
+while0:
+cp r20, r21
+brlo shorloop0
+sbi PORTA, 1
+ldi   r17,200
+ldi r18, 9
+aux11:
+ldi   r16,250
+aux21:
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+dec   r16
+breq  dec_r171
+rjmp  aux21
+dec_r171:
+dec  r17
+breq  dec_r181
+rjmp  aux11
+dec_r181:
+dec  r18
+breq  endloopSleep1
+rjmp  aux11
+endloopSleep1:
+cbi PORTA, 1
+ldi   r17,200
+ldi r18, 9
+aux12:
+ldi   r16,250
+aux22:
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+dec   r16
+breq  dec_r172
+rjmp  aux22
+dec_r172:
+dec  r17
+breq  dec_r182
+rjmp  aux12
+dec_r182:
+dec  r18
+breq  endloopSleep2
+rjmp  aux12
+endloopSleep2:
+rjmp while0
+end_loop0:
